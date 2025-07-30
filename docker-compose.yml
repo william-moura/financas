@@ -1,0 +1,22 @@
+services:
+  app-angular:
+    build: .
+    container_name: app-angular
+    working_dir: /app
+    volumes:
+      - .:/app      
+    ports:
+      - 9002:9002
+    command: "ng build"
+  web-angular:
+    image: nginx:latest
+    container_name: web-angular
+    restart: always
+    ports:
+      - "8086:8085"
+    volumes:
+      - ./dist/financas/browser:/app
+      - ./site.conf:/etc/nginx/conf.d/site.conf
+      # - ./site.conf:/etc/nginx/sites-available/financas
+    depends_on:
+      - app-angular
