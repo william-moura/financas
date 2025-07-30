@@ -1,11 +1,26 @@
 .table {
     width: 100%;
-    border: 2px solid black;
+    border: 2px solid #800637;
+    overflow: auto;
+    height: 50px;
+    border-radius: 6px;
     & tr {
-        border-bottom: 4px solid red;
+        // border-bottom: 4px solid red;
     }
     & td {
         text-align: center;
         padding: 0.5rem;
+        // border-bottom: 3px solid #f50;
+    }
+    & body {
+        height: auto;
+        overflow: scroll;
+    }
+    & thead {
+        background-color: #800637;
+        color: white;
+        font-weight: 700;
+        font-size: 1.2em;
+        height: 50px;
     }
 }
