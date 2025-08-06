@@ -16,7 +16,8 @@ services:
     ports:
       - "8086:8085"
     volumes:
-      - ./dist/financas/browser:/app
+      - ./docs:/app
+      # - ./dist/financas/browser:/app
       - ./site.conf:/etc/nginx/conf.d/site.conf
       # - ./site.conf:/etc/nginx/sites-available/financas
     depends_on:
