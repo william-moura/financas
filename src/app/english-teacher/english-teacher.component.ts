@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AIAgentService } from '../aiagent.service';
+import { inject } from "@angular/core";
 
 @Component({
   selector: 'app-english-teacher',
@@ -7,5 +9,13 @@ import { Component } from '@angular/core';
   styleUrl: './english-teacher.component.scss'
 })
 export class EnglishTeacherComponent {
+  constructor(private aIAgentService: AIAgentService){ }
+  userText: string = '';
+  correction: string = '';
+  // private aIAgentService = inject(AIAgentService);
 
+
+  getCorrection() {
+    console.log(this.aIAgentService);
+  }
 }

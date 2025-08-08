@@ -1,1 +1,10 @@
-<p>english-teacher works!</p>
+<div class="tutor-container">
+  <h1>English Tutor Agent</h1>
+  <textarea placeholder="Digite uma frase em inglês..."></textarea>
+  <button (click)="getCorrection()">Corrigir</button>
+  
+  <div  class="correction-box">
+    <h3>Correção e Explicação:</h3>
+    <p>{{ correction }}</p>
+  </div>
+</div>
