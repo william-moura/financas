@@ -1,21 +1,22 @@
 import { Component } from '@angular/core';
-import { AIAgentService } from '../aiagent.service';
-import { inject } from "@angular/core";
+import { AiagentService } from '../aiagent.service';
+import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-english-teacher',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './english-teacher.component.html',
   styleUrl: './english-teacher.component.scss'
 })
 export class EnglishTeacherComponent {
-  constructor(private aIAgentService: AIAgentService){ }
   userText: string = '';
-  correction: string = '';
-  // private aIAgentService = inject(AIAgentService);
-
+  correction: string|undefined = '';
+  constructor(private aiagente: AiagentService){}
 
   getCorrection() {
-    console.log(this.aIAgentService);
+    this.aiagente.getEnglishCorrection(this.userText).then((response) => {
+        this.correction = response.text
+    })
+    .catch((error) => console.log(error));
   }
 }

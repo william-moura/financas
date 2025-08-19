@@ -1,6 +1,6 @@
 <div class="tutor-container">
   <h1>English Tutor Agent</h1>
-  <textarea placeholder="Digite uma frase em inglês..."></textarea>
+  <textarea placeholder="Digite uma frase em inglês..." [(ngModel)]="userText"></textarea>
   <button (click)="getCorrection()">Corrigir</button>
   
   <div  class="correction-box">
